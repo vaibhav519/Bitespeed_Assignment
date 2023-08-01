@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Identity Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin-top: 30px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        width: 95%;
+        font-size: 16px;
+        padding: 10px;
+        margin: 20px auto;
+        resize: none;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #response {
+        font-size: 16px;
+        background-color: #f5f5f5;
+        padding: 10px;
+        white-space: pre-wrap;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Identity Service</h1>
+    <p>Enter JSON request with email and password:</p>
+    <textarea
+      id="jsonRequest"
+      rows="6"
+      cols="50"
+      placeholder='{"email": "example@example.com", "password": "mypassword"}'
+    ></textarea>
+    <br />
+    <button onclick="sendRequest()">Submit</button>
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+
+    <script>
+      function sendRequest() {
+        const jsonRequest = document.getElementById("jsonRequest").value;
+        try {
+          const request = JSON.parse(jsonRequest);
+
+          fetch("http://localhost:5000/identify", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(request),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network request failed or server returned an error."
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              document.getElementById("response").innerText = JSON.stringify(
+                data,
+                null,
+                2
+              );
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              document.getElementById("response").innerText =
+                "Error: " + error.message;
+            });
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("response").innerText =
+            "Error: Invalid JSON input. Please check your JSON format and try again.";
+        }
+      }
+    </script>
+  </body>
+</html>
