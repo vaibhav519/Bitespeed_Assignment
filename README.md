@@ -11,8 +11,8 @@ containing email and phone number data, and the service will process the informa
 - Access the front-end interface by opening index.html in your web browser.<br/>
 
 **API Endpoint:**<br/>
-- POST /identify: Accepts JSON requests with email and phone number. Identifies contacts and returns the information as a JSON response.<br/>
-- [Link]: https://bitespeed-assignment-81r8.onrender.com<br/>
+- POST /identify: Accepts JSON requests with email and phone number. Identifies contacts and returns the information as a JSON response.
+  [Link]: https://bitespeed-assignment-81r8.onrender.com
 
 **Dependencies**
 - Node.js
