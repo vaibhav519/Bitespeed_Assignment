@@ -6,16 +6,16 @@ containing email and phone number data, and the service will process the informa
 **How to Use:**<br/>
 - Clone the repository to your local machine.<br/>
 - Install the required dependencies by running npm install.<br/>
-Set up your MySQL database and update the .env file with your database credentials.<br/>
-Start the Node.js server by running npm start.<br/>
-Access the front-end interface by opening index.html in your web browser.<br/>
+- Set up your MySQL database and update the .env file with your database credentials.<br/>
+- Start the Node.js server by running npm start.<br/>
+- Access the front-end interface by opening index.html in your web browser.<br/>
 
 **API Endpoint:**<br/>
-POST /identify: Accepts JSON requests with email and phone number. Identifies contacts and returns the information as a JSON response.<br/>
-[Link]: https://bitespeed-assignment-81r8.onrender.com<br/>
+- POST /identify: Accepts JSON requests with email and phone number. Identifies contacts and returns the information as a JSON response.<br/>
+- [Link]: https://bitespeed-assignment-81r8.onrender.com<br/>
 
-**Dependencies**<br/>
-Node.js<br/>
-Express.js<br/>
-Sequelize<br/>
-MySQL2
+**Dependencies**
+- Node.js
+- Express.js
+- Sequelize
+- MySQL2
