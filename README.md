@@ -4,8 +4,8 @@ A Node.js application that provides an API for identifying and managing contact 
 containing email and phone number data, and the service will process the information to identify multiple contacts linked to single user.
 
 **How to Use:**<br/>
-Clone the repository to your local machine.<br/>
-Install the required dependencies by running npm install.<br/>
+- Clone the repository to your local machine.<br/>
+- Install the required dependencies by running npm install.<br/>
 Set up your MySQL database and update the .env file with your database credentials.<br/>
 Start the Node.js server by running npm start.<br/>
 Access the front-end interface by opening index.html in your web browser.<br/>
